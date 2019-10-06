@@ -1,3 +1,486 @@
-[gd_scene format=2]
+[gd_scene load_steps=17 format=2]
 
-[node name="Level_1" type="Node2D"]
+[ext_resource path="res://levels/level.gd" type="Script" id=1]
+[ext_resource path="res://assets/levels/grass/grass.png" type="Texture" id=2]
+[ext_resource path="res://collectibles/pants.tscn" type="PackedScene" id=3]
+[ext_resource path="res://collectibles/torso.tscn" type="PackedScene" id=4]
+[ext_resource path="res://collectibles/hat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/bear.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemies/miniBear.tscn" type="PackedScene" id=7]
+[ext_resource path="res://obstacles/fireplace.tscn" type="PackedScene" id=8]
+[ext_resource path="res://startEnd/end.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/startEndSign.png" type="Texture" id=10]
+[ext_resource path="res://startEnd/start.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/title.png" type="Texture" id=12]
+[ext_resource path="res://assets/rules.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5000, 50 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 200, 82.7942 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1000, 100 )
+
+[node name="level_1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="floor" type="Node2D" parent="."]
+
+[node name="floor_1" type="StaticBody2D" parent="floor"]
+position = Vector2( 4956.61, 670 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_1"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_1"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_2" type="StaticBody2D" parent="floor"]
+position = Vector2( 14900.4, 670 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_2"]
+position = Vector2( 4.904, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_3" type="StaticBody2D" parent="floor"]
+position = Vector2( 20100.8, 669.366 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_3"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_3"]
+position = Vector2( 1.57361, 29.707 )
+scale = Vector2( 0.0391851, 2.85797 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_4" type="StaticBody2D" parent="floor"]
+position = Vector2( 20495, 598.875 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_4"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_4"]
+position = Vector2( 1.57361, 29.707 )
+scale = Vector2( 0.0391851, 2.85797 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_5" type="StaticBody2D" parent="floor"]
+position = Vector2( 20881.8, 516.245 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_5"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_5"]
+position = Vector2( 1.57361, 29.707 )
+scale = Vector2( 0.0391851, 2.85797 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_6" type="StaticBody2D" parent="floor"]
+position = Vector2( 21273.8, 600.633 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_6"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_6"]
+position = Vector2( 1.57361, 29.707 )
+scale = Vector2( 0.0391851, 2.85797 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_7" type="StaticBody2D" parent="floor"]
+position = Vector2( 21660.6, 685.022 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_7"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_7"]
+position = Vector2( 1.57361, 29.707 )
+scale = Vector2( 0.0391851, 2.85797 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_8" type="StaticBody2D" parent="floor"]
+position = Vector2( 22858.6, 760.568 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_8"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_8"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_9" type="StaticBody2D" parent="floor"]
+position = Vector2( 24862.5, 687.56 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_9"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_9"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_10" type="StaticBody2D" parent="floor"]
+position = Vector2( 26861.5, 760.568 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_10"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_10"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_11" type="StaticBody2D" parent="floor"]
+position = Vector2( 28855.2, 672.478 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_11"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_11"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_12" type="StaticBody2D" parent="floor"]
+position = Vector2( 30849.7, 591.582 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_12"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_12"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_13" type="StaticBody2D" parent="floor"]
+position = Vector2( 32851.5, 656.398 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_13"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_13"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_14" type="StaticBody2D" parent="floor"]
+position = Vector2( 34848.7, 656.398 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_14"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_14"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="floor_15" type="StaticBody2D" parent="floor"]
+position = Vector2( 36830.9, 656.398 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_15"]
+position = Vector2( 0, -32.7279 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="floor/floor_15"]
+position = Vector2( 0.513, -10.9588 )
+scale = Vector2( 0.200423, 2.39 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 100 )
+
+[node name="collectibles" type="Node2D" parent="."]
+
+[node name="collectible3" parent="collectibles" instance=ExtResource( 3 )]
+position = Vector2( 11538.2, 588.979 )
+
+[node name="collectible4" parent="collectibles" instance=ExtResource( 3 )]
+position = Vector2( 27726.9, 593.354 )
+
+[node name="collectible10" parent="collectibles" instance=ExtResource( 3 )]
+position = Vector2( 29657.2, 518.037 )
+
+[node name="collectible12" parent="collectibles" instance=ExtResource( 3 )]
+position = Vector2( 31372.4, 443.471 )
+
+[node name="collectible" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 20790.6, 373.575 )
+
+[node name="collectible7" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 23416.4, 489.382 )
+
+[node name="collectible8" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 25392.7, 303.084 )
+
+[node name="collectible2" parent="collectibles" instance=ExtResource( 5 )]
+position = Vector2( 14099.9, 591.265 )
+
+[node name="collectible5" parent="collectibles" instance=ExtResource( 5 )]
+position = Vector2( 21911.8, 591.265 )
+
+[node name="collectible6" parent="collectibles" instance=ExtResource( 5 )]
+position = Vector2( 24401.6, 243.845 )
+
+[node name="collectible9" parent="collectibles" instance=ExtResource( 5 )]
+position = Vector2( 26148.6, 434.707 )
+
+[node name="collectible11" parent="collectibles" instance=ExtResource( 5 )]
+position = Vector2( 31904.5, 516.439 )
+
+[node name="projectiles" type="Node2D" parent="."]
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemy5" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 16132.3, 632.515 )
+
+[node name="enemy11" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 21186.8, 491.868 )
+
+[node name="enemy14" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 23991.3, 574.946 )
+
+[node name="enemy18" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 25973.4, 630.737 )
+
+[node name="enemy20" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 27341.7, 633.673 )
+
+[node name="enemy19" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 27036.3, 633.673 )
+
+[node name="enemy22" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 28752.1, 568.076 )
+
+[node name="enemy24" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 30916.5, 491.408 )
+
+[node name="enemy26" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 32595.7, 557.731 )
+
+[node name="enemy16" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 25315.6, 562.359 )
+
+[node name="enemy12" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 23160.5, 640.402 )
+
+[node name="enemy" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 3647.45, 623.897 )
+
+[node name="enemy2" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 6608.45, 627.793 )
+
+[node name="enemy3" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 6659.1, 647.274 )
+
+[node name="enemy4" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 9709.7, 625.845 )
+
+[node name="enemy6" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 12564.4, 637.435 )
+
+[node name="enemy7" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 17662.8, 627.674 )
+
+[node name="enemy8" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 18056.3, 627.674 )
+
+[node name="enemy9" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 20234.6, 573.173 )
+
+[node name="enemy10" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 20626.6, 495.817 )
+
+[node name="enemy15" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 31060.5, 476.011 )
+
+[node name="enemy23" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 29269.5, 546.631 )
+
+[node name="enemy25" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 31527.9, 478.244 )
+
+[node name="enemy27" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 34681.3, 531.001 )
+
+[node name="enemy21" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 27548.3, 637.618 )
+
+[node name="enemy17" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 25445.2, 558.756 )
+
+[node name="enemy13" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 23315.4, 636.799 )
+
+[node name="obstacles" type="Node2D" parent="."]
+
+[node name="obstacle" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 2485.16, 596.21 )
+
+[node name="obstacle2" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 4853.33, 582.147 )
+
+[node name="obstacle3" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 5425.15, 575.966 )
+
+[node name="obstacle4" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 9226.89, 599.261 )
+
+[node name="obstacle8" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 7821.35, 612.275 )
+
+[node name="obstacle7" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 7775.81, 589.5 )
+
+[node name="obstacle5" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 10161.6, 586.604 )
+
+[node name="obstacle6" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 12947.9, 588.762 )
+
+[node name="obstacle9" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 19862.3, 603.586 )
+
+[node name="obstacle13" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 22087.8, 645.406 )
+
+[node name="obstacle14" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 24824.1, 532.71 )
+
+[node name="obstacle15" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 28262.8, 531.653 )
+
+[node name="obstacle16" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 28874.4, 521.552 )
+
+[node name="obstacle17" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 28920.7, 557.816 )
+
+[node name="obstacle18" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 30174.2, 436.359 )
+
+[node name="obstacle19" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 33099.4, 495.875 )
+
+[node name="obstacle20" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 33543.1, 498.16 )
+
+[node name="obstacle21" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 33972.1, 495.51 )
+
+[node name="obstacle22" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 33582.6, 516.711 )
+
+[node name="obstacle23" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 33132.1, 524.661 )
+
+[node name="obstacle24" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 34006.6, 527.311 )
+
+[node name="obstacle12" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 22173.4, 646.384 )
+
+[node name="obstacle11" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 22128.6, 616.671 )
+
+[node name="obstacle10" parent="obstacles" instance=ExtResource( 8 )]
+position = Vector2( 21571.2, 538.537 )
+
+[node name="startEnd" type="Node2D" parent="."]
+
+[node name="end" parent="startEnd" instance=ExtResource( 9 )]
+position = Vector2( 35881.8, 131.087 )
+
+[node name="startSign2" type="Sprite" parent="startEnd/end"]
+position = Vector2( -509.115, 253.085 )
+texture = ExtResource( 10 )
+
+[node name="start" parent="startEnd" instance=ExtResource( 11 )]
+position = Vector2( 161.839, 514.941 )
+
+[node name="title" type="Sprite" parent="startEnd"]
+position = Vector2( 488.357, 220.997 )
+scale = Vector2( 1.51917, 1.51917 )
+texture = ExtResource( 12 )
+
+[node name="rules" type="Sprite" parent="startEnd"]
+position = Vector2( 1066.35, 364.723 )
+texture = ExtResource( 13 )
+
+[node name="startSign" type="Sprite" parent="startEnd"]
+position = Vector2( 768.163, 466.238 )
+texture = ExtResource( 10 )

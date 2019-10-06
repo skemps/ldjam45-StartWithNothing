@@ -1,0 +1,112 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/star.png" type="Texture" id=2]
+[ext_resource path="res://assets/stickman/head_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/stickman/head_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/stickman/head_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/stickman/head_4.png" type="Texture" id=6]
+[ext_resource path="res://assets/stickman/legs_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/stickman/legs_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/stickman/legs_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/stickman/legs_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/stickman/legs_11.png" type="Texture" id=11]
+[ext_resource path="res://assets/stickman/legs_12.png" type="Texture" id=12]
+[ext_resource path="res://assets/stickman/legs_13.png" type="Texture" id=13]
+[ext_resource path="res://assets/stickman/legs_14.png" type="Texture" id=14]
+[ext_resource path="res://assets/stickman/torso_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/stickman/torso_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/stickman/torso_3.png" type="Texture" id=17]
+[ext_resource path="res://assets/stickman/torso_4.png" type="Texture" id=18]
+[ext_resource path="res://assets/stickman/torso_11.png" type="Texture" id=19]
+[ext_resource path="res://assets/stickman/torso_12.png" type="Texture" id=20]
+[ext_resource path="res://assets/stickman/torso_13.png" type="Texture" id=21]
+[ext_resource path="res://assets/stickman/torso_14.png" type="Texture" id=22]
+[ext_resource path="res://assets/censored.png" type="Texture" id=23]
+[ext_resource path="res://assets/hat.png" type="Texture" id=24]
+[ext_resource path="res://assets/talkClouds/noWay.png" type="Texture" id=25]
+[ext_resource path="res://assets/talkClouds/nothing.png" type="Texture" id=26]
+[ext_resource path="res://assets/talkClouds/freezing.png" type="Texture" id=27]
+[ext_resource path="res://assets/talkClouds/what.png" type="Texture" id=28]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 50.0
+height = 100.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="player" type="KinematicBody2D"]
+collision_mask = 30
+script = ExtResource( 1 )
+
+[node name="warning" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -20.542 )
+scale = Vector2( 1.06691, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="headNaked" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+
+[node name="legsNaked" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+
+[node name="torsoNaked" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+
+[node name="censored" type="Sprite" parent="."]
+position = Vector2( 5.41644, 37.9153 )
+texture = ExtResource( 23 )
+
+[node name="hat" type="Sprite" parent="."]
+visible = false
+position = Vector2( 4.58256, -86.7 )
+scale = Vector2( 1.06691, 1 )
+texture = ExtResource( 24 )
+
+[node name="clouds" type="Node2D" parent="."]
+
+[node name="noway" type="Sprite" parent="clouds"]
+visible = false
+position = Vector2( 38.96, -142.608 )
+texture = ExtResource( 25 )
+
+[node name="nothing" type="Sprite" parent="clouds"]
+visible = false
+position = Vector2( 38.96, -142.608 )
+texture = ExtResource( 26 )
+
+[node name="freezing" type="Sprite" parent="clouds"]
+visible = false
+position = Vector2( 38.96, -142.608 )
+texture = ExtResource( 27 )
+
+[node name="what" type="Sprite" parent="clouds"]
+visible = false
+position = Vector2( 38.96, -142.608 )
+texture = ExtResource( 28 )
